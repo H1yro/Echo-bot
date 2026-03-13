@@ -106,7 +106,7 @@ def handle_sticker(message):
         bot.send_message(message.chat.id, "Произошла ошибка при обработке стикера.")
 
 @bot.message_handler(content_types=['audio'])
-def handle_sticker(message):
+def handle_audio(message):
     try:
         logger.info(f"\n--- Новое сообщение ---")
 
@@ -118,11 +118,11 @@ def handle_sticker(message):
         logger.info(f"Тип сообщения: {message.content_type}")
 
         file_id = message.audio.file_id
-        bot.send_sticker(message.chat.id, file_id)
-        logger.info(f"Стикер (File ID: {file_id}) отправлен обратно пользователю {user_id}.")
+        bot.send_audio(message.chat.id, file_id)
+        logger.info(f"Аудио (File ID: {file_id}) отправлен обратно пользователю {user_id}.")
     except Exception as e:
-        logger.error(f"Ошибка при обработке стикера от {user_id}: {e}")
-        bot.send_message(message.chat.id, "Произошла ошибка при обработке стикера.")
+        logger.error(f"Ошибка при обработке аудио от {user_id}: {e}")
+        bot.send_message(message.chat.id, "Произошла ошибка при обработке аудио.")
 
 @bot.message_handler(content_types=['text'])
 def handle_text(message):
