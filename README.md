@@ -1,2 +1,2 @@
 # Echo-bot
- A bot that can send a user's photo, video, audio, sticker, or text back to them.
+ Hi! This is an echo bot that can send photos, videos, audio, stickers, or text!
